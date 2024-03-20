@@ -38,7 +38,7 @@ export function update(text, synonym) {
 }
 
 export function remove(text) {
-    synonyms.remove(text)
+    synonyms.delete(text)
 }
 
 

@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 
-import { readAll, create, read, update } from './repository.js'
+import { readAll, create, read, update, remove } from './repository.js'
 
 const app = express()
 
@@ -43,6 +43,12 @@ app.put('/api/synonym/:text', (req, res) => {
     } catch(error) {
         return res.status(201).json(create(synonym))
     }
+})
+
+app.delete('/api/synonym/:text', (req, res) => {
+    const { text } = req.params
+    remove(text)
+    return res.status(204).end()
 })
 
 
