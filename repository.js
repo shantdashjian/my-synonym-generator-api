@@ -15,7 +15,11 @@ export function readAll() {
 }
 
 export function read(text) {
-    return synonyms.get(text)
+    if (synonyms.has(text)) {
+        return synonyms.get(text)
+    } else {
+        throw new Error('NOT FOUND')
+    }
 }
 
 export function create(synonym) {
