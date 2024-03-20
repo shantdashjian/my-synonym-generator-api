@@ -33,7 +33,8 @@ export function create(synonym) {
 }
 
 export function update(text, synonym) {
-    return synonyms.set(text, synonym)
+    synonyms.set(text, synonym)
+    return synonym
 }
 
 export function remove(text) {
