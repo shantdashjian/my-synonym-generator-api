@@ -18,9 +18,11 @@ export function read(text) {
     return synonyms.get(text)
 }
 
-export function create(text, synonym) {
+export function create(synonym) {
+    const text = synonym.text
     if (!synonyms.has(text)) {
-        return synonyms.set(text, synonym)
+        synonyms.set(text, synonym)
+        return synonym
     } else {
         throw new Error('ALREADY EXISTS')
     }
